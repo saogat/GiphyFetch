@@ -1,7 +1,16 @@
+
+html{
+  line-height: 1;
+}
+
 #panel {
   background-color: lightgoldenrodyellow;
   padding-top: 20px;
   padding-bottom: 30px;
+}
+
+nav{
+  line-height: 20px;
 }
 
 .nav-extended {
@@ -28,5 +37,28 @@
  }
 
  .image-div{
-    width: auto;
+    max-width: 200px;
+    margin: 10px 0 0 0; 
+    padding: 0;
  }
+
+ .rating-div{
+   padding: 0 10px 0 0;
+   margin: 0 10px 0 0 ;
+ }
+
+h1 {
+  text-align: center;
+}
+
+#panel{
+  margin: 20px;
+  min-width: 200px;
+
+}
+
+p {
+  margin: 0;
+  padding: 0;
+
+}

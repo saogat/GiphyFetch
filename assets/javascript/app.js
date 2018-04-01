@@ -1,3 +1,5 @@
+var selectedSearch;
+
 $("#add-button").click(function (event) {
   event.preventDefault();
   var button = $("<button>");
@@ -11,12 +13,18 @@ $("#add-button").click(function (event) {
 // get gifs
 $(document).on("click", ".gif-button", function (event) {
   event.preventDefault();
-  var gifsDiv =  $("#gifs");
+  var gifsDiv = $("#gifs");
   gifsDiv.empty();
+  if (selectedSearch != ($(this).text())) {
+    selectedSearch = ($(this).text());
+    limit = 0;
+  };
+  limit += 10;
   var queryURL = "https://api.giphy.com/v1/gifs/search?";
   queryURL += "api_key=0f5kuZG5eoid7B1aXqNUPOs4epVY7q0E";
   queryURL += "&q=" + ($(this).text());
-  queryURL += "&limit=10&offset=0&rating=G&lang=en";
+  queryURL += "&limit=" + limit;
+  queryURL += "&offset=0&rating=G&lang=en";
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -34,9 +42,10 @@ $(document).on("click", ".gif-button", function (event) {
       image.attr("src", stillUrl);
       image.attr("alt", each.title);
       image.attr("data-still", stillUrl);
-      image.attr("data-animate",  animateUrl);
+      image.attr("data-animate", animateUrl);
       image.attr("data-state", "still");
       var ratingDiv = $("<div>");
+      ratingDiv.addClass("rating-div");
       ratingDiv.append($("<p>").html("Rating: " + each.rating));
       imageDiv.append(ratingDiv);
       gifsDiv.append(imageDiv);
