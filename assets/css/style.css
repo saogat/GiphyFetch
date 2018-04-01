@@ -1,0 +1,32 @@
+#panel {
+  background-color: lightgoldenrodyellow;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.nav-extended {
+  background: rgb(177, 202, 238);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 0 1px 3px rgba(1, 0, 0, 5);
+  color: white;
+}
+
+.nav-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ #gifs{
+   background: rgb(104, 190, 137);
+   padding-top: 20px;
+   padding-bottom: 30px;
+   height: 100%;
+ }
+
+ .image-div{
+    width: auto;
+ }
