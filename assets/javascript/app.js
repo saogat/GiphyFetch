@@ -1,13 +1,25 @@
+var topics = ["fishing", "painting", "canoeing"];
 var selectedSearch;
+var gifButtonsDiv = $("#gif-buttons");
+
+function addButtons() {
+  topics.forEach(function (each) {
+    var button = $("<button>");
+    button.addClass("gif-button");
+    button.text(each);
+    gifButtonsDiv.append(button);
+  });
+}
+
+addButtons();
 
 $("#add-button").click(function (event) {
   event.preventDefault();
-  var button = $("<button>");
-  button.addClass("gif-button");
-  button.text($("#search-term").val());
-  console.log($("#search-term").val());
-  $("#gif-buttons").append(button);
-  $("#search-term").val("");
+  var searchInput = $("#search-term");
+  gifButtonsDiv.empty();
+  topics.push(searchInput.val());
+  searchInput.val("");
+  addButtons();
 })
 
 // get gifs
